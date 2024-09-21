@@ -1,0 +1,115 @@
+	Q1 . Write a Python program which accept the radius of a circle from the user and compute
+the area.
+Sample Output :
+r = 1.1
+Area = 3.8013271108436504
+
+Solution : 
+import math
+r = 1.1 
+print(math.pi * math.pow(r,2))
+
+Q2: Temperature of a city in Fahrenheit degrees is input through the keyboard. Write a
+program to convert this temperature into Centigrade degrees.
+
+Solution : 
+fahrenheight = 45
+celcius = (fahrenheight - 32 ) * 5/9
+print(celcius)
+
+Q3: Write a Python Program to make a simple calculator that can add, subtract, multiply and
+divide
+
+a=5
+b=6
+print("addition : ",a+b)
+print("multiplication :",a*b)
+print("division :",a/b)
+print("subtraction :",a-b)
+
+Q4: Write a Python Program to calculate the square root
+import math 
+a = 36
+print(math.sqrt(a))
+
+Q5 Write a Python Program to Solve the quadratic equation ax**2 + bx + c = 0
+# Coeffients a, b and c are provided by the user
+[Hint: import complex math module - import cmath]
+Solution :
+a = int(input('enter a :'))
+b = int(input('enter b :'))
+c = int(input('enter c :'))
+
+ # Calculate the solutions directly using the quadratic formula
+
+x1 = (-b + cmath.sqrt(b**2 - 4*a*c)) / (2*a)
+x2 = (-b - cmath.sqrt(b**2 - 4*a*c)) / (2*a)
+
+print("Solutions are : " + str(x1) " and " + str(x2))
+
+solution 2 :
+import math
+import cmath
+a = int(input("enter the temp in a of the circle :"))
+b = int(input("enter the temp in b of the circle :"))
+c = int(input("enter the temp in c of the circle :"))
+"""
+D = cmath.sqrt(b**2-4*a*c)
+x1 = (-b + D )/(2*a)
+x2 = (-b - D)/(2*a)
+"""
+
+x1 = (-b + cmath.sqrt(b**2 - 4*a*c)) / (2*a)
+x2 = (-b - cmath.sqrt(b**2 - 4*a*c)) / (2*a)
+
+print (x1 , "  & " , x2)
+
+
+
+Q6: Write a Python Program to find the area of triangle
+# Three sides of the triangle a, b and c are provided by the user
+
+side1 = int(input("side1 : "))
+side2 = int(input("side2 : "))
+side3 = int(input("side3 : "))
+s = (a+b+c)/2
+area = math.sqrt(s * (s - a) * (s - b) * (s - c))
+print(area)
+
+Q7: If a five-digit number is input through the keyboard, write a program to calculate the sum
+of its digits without using any loop. (Hint: Use the modulus operator ‘%’)
+
+a = 45865
+sum = 0
+sum += a%10
+(int)a=a/10
+
+sum+= a%10
+(int)a=a/10
+
+sum+= a%10
+(int)a=a/10
+
+sum+= a%10
+(int)a=a/10
+
+sum+= a%10
+(int)a=a/10
+
+print(sum)
+
+
+Q8 Write a Python program to print the following string in a specific format:
+print("""Twinkle, twinkle, little star,
+             How I wonder what you are!
+                     Up above the world so high,
+                     Like a diamond in the sky.
+Twinkle, twinkle, little star,
+    How I wonder what you are""")
+
+Q.9 Write a Python program to display your details like name, age, address in three different
+lines.
+name = "cyz"
+age = 23
+adress = "at po - sangamner , ahmednagar , 422601"
+print(name + "\n" + str(age) + "\n" + adress)

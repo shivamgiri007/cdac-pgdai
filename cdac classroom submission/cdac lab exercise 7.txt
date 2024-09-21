@@ -1,0 +1,132 @@
+1.  Write a Python program to read first n lines of a file.
+
+Solution : 
+
+with open("example.txt","r") as f:
+          for i in range(6):
+              line = f.readline()
+              if(not line):
+                  break
+              else:
+                  print(line)
+---------------------------------------------------------------------------------------------
+
+2. Write a Python program to append text to a file and display the text.
+
+Solution :
+
+with open("example.txt","a+") as f:
+    f.read()
+    f.write("\nthis is new line")
+    f.write("\nthis is one more new line")
+    f.seek(0)
+    print(f.read())
+
+----------------------------------------------------------------------------------------------
+
+3. Write a Python program to read a file line by line and store it into a list.
+
+Solution :
+
+with open("example.txt","r") as f:
+          lines = f.readlines()
+          print(lines)
+-----------------------------------------------------------------------------------------------
+
+4. Write a program to print each line of a file in reverse order.
+
+with open("example.txt","r") as f:
+          lines = f.readlines()
+          print(lines[::-1])
+-----------------------------------------------------------------------------------------------
+5. Write a Python program to write a list content to a file.
+
+Solution :
+
+my_list = ["apple", "banana", "cherry"]
+with open("example.txt", 'a') as file:
+    for item in my_list:
+        file.write(item + "\n")
+-----------------------------------------------------------------------------------------------
+
+6. Write a program to compute the number of characters, words and lines in a file.
+
+Solution :
+
+with open("example.txt","r") as f:
+  lines = f.readlines()
+  print("The number of lines are :" , len(lines))
+  word_count = 0
+  for line in lines:
+    line = line.split()
+    word_count += len(line)
+  print("the number of words in this document are : ",word_count)
+  character_count = 0
+  for line in lines:
+    for word in line:
+      character_count += len(word)
+  
+  print("the number of characters in this document are : ",character_count)
+
+-------------------------------------------------------------------------------------------------
+
+Q7 . Write a program to accept string/sentences from the user till the user enters “END” to. Save
+the data in a text file and then display only those sentences which begin with an uppercase
+alphabet.
+
+with open("example.txt","a+") as f:
+  while(True):
+    line = input("enter string :")
+    f.write(line+"\n")
+    yesno = input("Do you want to continue : (yes / end) ")
+    if(yesno.lower() == "end"):
+      break
+  f.seek(0)
+  lines = f.readlines()
+  for line in lines:
+    if(line[0][0]==line[0][0].upper()):
+      print(line)
+    
+-------------------------------------------------------------------------------------------------
+
+Write a program to enter the following records in a binary file:
+Item No integer
+Item_Name string
+Qty integer
+Price float
+Number of records to be entered should be accepted from the user. Read the file to display the
+records in the following format:
+Item No:
+Item Name :
+Quantity:
+Price per item:
+Amount: ( to be calculated as Price * Qty)
+
+Solution :
+import pickle
+with open("binaryfile.dat","wb") as f :
+  n = int(input("Enter the number of records: "))
+  for i in range(n):
+    Item_No = int(input("enter the item number :"))
+    Item_Name = input("enter the Item_name :")
+    Qty = int(input("Enter the number of quantity :"))
+    Price = float(input("Enter the price of product :"))
+    Amount = Qty*Price
+    entry = (Item_No , Item_Name , Qty , Amount , Price)
+    print("---------------------------------------------")
+    pickle.dump(entry,f)
+with open("binaryfile.dat","rb") as f:
+  f.seek(0)
+  while True:
+    try:
+      record = pickle.load(f)
+      Item_No, Item_Name, Qty, Amount, Price = record
+      print("Item No:", Item_No)
+      print("Item Name:", Item_Name)
+      print("Quantity:", Qty)
+      print("Amount:", Amount)
+      print("Price per item:", Price)
+      print()
+    except EOFError:
+                break
+--------------------------------------------------------------------------------------------------                

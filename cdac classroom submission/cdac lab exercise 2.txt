@@ -1,0 +1,95 @@
+Q 1.Create a string containing both a single quote and double quote
+a = "String1"
+b = 'string2'
+print(a+b)
+
+2.Create a triple quoted string that contains single and double quotes.
+
+print("""Hello i\'m \"Student\"""")
+
+3.Create a character, then obtain its integer representation.
+a = 'a'
+print(ord(a))
+
+4.Create a single string containing 5 copies of the string &#39;abc&#39;.
+
+print("student "*3)
+
+5.Use the multiplication operator to create a &quot;line&quot; of 50 dashes.
+print("-"*50)
+
+6.Convert a string to all upper case.
+print("this is string".upper())
+
+Q7 : Write a Python program to get a string made of the first 2 and the last 2 chars from a given a
+string.
+
+a = "this is a sample string"
+b = (a[:2]+a[-2:]) 
+print(b)
+
+Q8: a Python program to get a string from a given string where all occurrences of its first char have been changed to '$', except the first char itself.
+sample string : 'restart'
+result string : 'resta$t'
+
+a = "helloh hwohrldh"
+new_string = a[:1] + a[1:].replace(a[:1],"$")
+
+
+
+Q9. Write a Python program to get a single string from two given strings, separated by a space
+and swap the first two characters of each string.
+Sample String : abc xyz;
+Expected Result : xyc abz
+
+solution - 
+  string1: "abc"
+  string2: "xyz"
+  
+swapped_string1 =   string1[:2] + string2[2:]
+swapped_string2 =   string2[:2] + string1[2:]
+print(swapped_string1 + " " + swapped_string2)
+
+Q10: Write a Python program to add 'ing' at the end of a given string (length should be at least 3). If the given string is already ends with 'ing' then add 'ly' instead.
+
+a = 'sketing'
+if(a[-3:]=='ing'):
+    a = a+'ly'
+else:
+    a = a+'ing'
+
+Q11: The marks obtained by a student in 5 different Subjects are input through a keyboard. The Student gets a division as per the following rules. our work Assigned + Add or create Mark as done C C Private comments d comment to Clac Nolde T 8 
+1. Percentage above or equal to 60 - First Division 
+2. Percentage between 50 and 59- Second Division 
+3. Percentage between 40 and 49- Third Division 
+4. Percentage less than 40-Fail
+
+Solution : 
+
+sub1 = int(input('enter marks :'))
+sub2 = int(input('enter marks :'))
+sub3 = int(input('enter marks :'))
+sub4 = int(input('enter marks :'))
+sub5 = int(input('enter marks :'))
+percentage = ((sub1 + sub2 + sub3 + sub4 + sub5)*100)/500
+if(percent>=60):
+	print('Frist division')
+elif(percentage>=50):
+	print('second devision')
+elif(percentage>=40):
+	print('Third Division')
+else:
+	print('Fail')
+
+Q12: write a Python program to find the largest number among the three input numbers
+
+num1 = int(input('enter the num1 : '))
+num2 = int(input('enter the num2 : '))
+num3 = int(input('enter the num3 : '))
+
+if(num1 > num2 && num1 > num3):
+	print(num1 , " is greatest number.")
+elif(num2 > num1 && num2 > num3):
+	print(num2 , " is greatest number.")
+else:
+	print(num3 , " is greatest number.")

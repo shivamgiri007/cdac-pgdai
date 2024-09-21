@@ -1,0 +1,71 @@
+Lab Exercise 3 
+Shivam Giri 
+
+Q1: Write a Python program to sum all the items in a list.
+
+list1=[1,2,3,4,5,6]
+sum_of_list = sum(list1)
+print(sum_of_list)
+
+Q2 Write a Python program to get the largest number from a list.
+
+list1=[1,2,3,4,5,6]
+max_num = max(list1)
+print(max_num)
+
+Q3. Write a Python program to get the smallest number from a list.
+
+list1=[1,2,3,4,5,6]
+min_num = min(list1)
+print(min_num)
+
+Q4: Write a Python program to display the first and last colors from the following list. 
+
+color_list=["Red", "Green", "White", "Black"]
+print(color_list[0] , color_list[-1])
+
+Q5: Write a Python program to check if the input year is a leap year or not.
+
+year = 2024
+if year % 4 == 0:
+    if year % 100 == 0:
+      if year % 400 == 0:
+        print("leap year")
+      else:
+        print("not leap year")
+    else:
+        print("leap year")
+else:
+    print("not leap year")
+
+Q6: write a Program to check if a string is palindrome or not
+
+if(s1 == s1[::-1]):
+	print("string is palindrome.")
+else:
+	print("string is not palindrome")
+
+Q7: Given a nested list. Write a python program to extend it with adding sub list ["h", "i", "j"] in a such a way that it will look like the following list
+Given List:
+list1 = ["a", "b", ["c", ["d", "e", ["f", "g"], "k"], "l"], "m", "n"]
+Sub List to be added = ["h", "i", "j"]
+Expected output:
+['a', 'b', ['c', ['d', 'e', ['f', 'g', 'h', 'i', 'j'], 'k'], 'l'], 'm', 'n']
+
+Solution :
+list1 = ["a", "b", ["c", ["d", "e", ["f", "g"], "k"], "l"], "m", "n"]
+list1[2][1][2].extend(["h", "i", "j"])
+
+Q8: Write a python program for Given a Python list, to find value 20 in the list, and if it is present, replace it with 200. Only update the first occurrence of a value
+list1 = [5, 10, 15, 20, 25, 50, 20]
+Expected output:
+list1 = [5, 10, 15, 200, 25, 50, 20]
+
+solution :
+list1 = [5, 10, 15, 20, 25, 50, 20]
+if(20 in list1):
+    list1[list1.index(20)]=200
+
+Solution:
+
+L2 = L1[-n:]+L1[:-n]

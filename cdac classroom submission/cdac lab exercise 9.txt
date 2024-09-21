@@ -1,0 +1,26 @@
+Shivam Giri	
+PGDAI Python lab exercise 9
+--------------------------------------------------------------------------------------------------------
+1. Define a class to represent a bank account. Include the following members: 
+Data Members:
+a.Name of the Depositor
+b.Account Number
+c.Type of Account
+d.Balance amount in the account
+Data Methods:
+a.To assign initial values
+b.To deposit an amount
+c.To withdraw an amount
+d.To display name and balance.
+
+Output:
+1. New customer
+2. Deposit
+3. Withdrawal
+4. Display
+5. Exit
+--------------------------------------
+Solution :
+
+
+
