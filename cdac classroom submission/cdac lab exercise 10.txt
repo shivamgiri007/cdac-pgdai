@@ -1,0 +1,178 @@
+Shiva Giri
+Lab Exercise 10
+-----------------------------------------------------------------------------------------------
+Q1: Write a function to compute 5/0 and use try/except to catch the exceptions.
+
+Solution :
+
+def trycatch():
+    try:
+        result = 5/0
+    except Exception as e :
+        print("Exception is :",e)
+
+trycatch()
+
+-----------------------------------------------------------------------------
+Q2: Write a Python program to access the array element whose index is out of bound and handle
+the corresponding exception
+
+Solution :
+
+def index_out_of_bond():
+    try:
+        arr = [1,2,34,5]
+        index = 10
+        print(arr[index])
+    except Exception as e :
+        print("The exception is :",e)
+
+index_out_of_bond()
+
+
+------------------------------------------------------------------------------
+Q 3: Write a Python Program to handle multiple errors with one except statement
+
+Solution :
+
+def handle_multiple_errors():
+    try:
+        arr = [1, 2, 3]
+        result = 5 / 0  #Exception
+        element = arr[5]  #Exception
+    except (ZeroDivisionError, IndexError) as e:
+        print("The first occured exception is : ", e)
+
+handle_multiple_errors()
+
+------------------------------------------------------------------------------
+
+Q 4: Write a Python Program to depict else clause with try-except
+
+Solution :
+
+def try_except_else():
+    try:
+        result = 5 / 2
+    except ZeroDivisionError as e:
+        print("Exception occurred:", e)
+    else:
+        print("No exception occurred. The result is:", result)
+
+
+try_except_else()
+
+
+-------------------------------------------------------------------------------
+
+
+Q5: Write a Python Program to depict Raising Exception
+
+Solution :
+
+
+def check_positive_number(number):
+    try:
+        if number < 0:
+            raise Exception("The number must be positive.")
+    except Exception as e:
+        print("Exception occurred:", e)
+    else:
+        print("The number is positive:", number)
+
+check_positive_number(-5)
+check_positive_number(10)
+
+-----------------------------------------------------------------------------
+
+Q6: Write a python program to create user-defined exception
+
+Solution :
+
+class NegativeNumberError(Exception):
+    def __init__(self,num):
+        self.num = num
+        self.msg = "The value "+str(num)+" is negative value"
+        super().__init__(self.msg)
+
+def checkPositive(value):
+    try:
+        if(value<0):
+            raise NegativeNumberError(value)
+    except Exception as e :
+        print(e)
+
+    else:
+        print("No exception Occured The ",value," is positive." )
+
+
+checkPositive(5)
+checkPositive(-6)
+
+
+-----------------------------------------------------------------------------
+Q7: Print one message if the try block raises a NameError and another for other errors:
+
+Solution :
+
+def check_errors():
+    try:
+        print(undefined_variable)
+    except NameError:
+        print("A NameError occurred: The variable is not defined.")
+    except Exception as e:
+        print("An error occurred:", e)
+
+check_errors()
+
+------------------------------------------------------------------------------
+
+
+Q8: Try to open and write to a file that is not writable:
+
+Solution :
+
+def write_to_read_only_file():
+    try:
+        with open("read_only_file.txt", "r") as f:
+            f.write("Trying to write to a read-only file.")
+    except IOError as e:
+        print("An IOError occurred:", e)
+    except Exception as e:
+        print("An unexpected error occurred:", e)
+
+write_to_read_only_file()
+
+----------------------------------------------------------------------------
+
+Q9: Write a python program to raise an error and stop the program if x is lower than 0.
+
+Solution :
+def check_value(x):
+    if x < 0:
+        raise ValueError(str(x)+" is smaller than 0.")
+    else:
+        print(str(x)+" is greater than 0.")
+
+
+try:
+    check_value(-1)  
+except ValueError as e:
+    print(e)
+
+-----------------------------------------------------------------------------
+Q10: Write a python program to raise a TypeError if x is not an integer:
+
+Solution :
+
+def check_integer(x):
+    if not isinstance(x, int):
+        raise TypeError(str(x) + " is not a int type.")
+    else:
+        print(str(x)+" in of int type.")
+
+try:
+    check_integer(3.5) 
+except TypeError as e:
+    print(e)
+-----------------------------------------------------------------------------

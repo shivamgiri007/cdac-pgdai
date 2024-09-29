@@ -22,5 +22,466 @@ Output:
 --------------------------------------
 Solution :
 
+class BankAccount:
+    def __init__(self, name, account_number, account_type, balance=0.0):
+        self.name = name  
+        self.account_number = account_number  
+        self.account_type = account_type  
+        self.balance = balance  
+
+    def deposit(self, amount):
+        if amount > 0:
+            self.balance += amount
+            print("Deposited: ",amount ," New Balance: ",self.balance)
+        else:
+            print("Invalid deposit amount.")
+
+    def withdraw(self, amount):
+        if 0 < amount <= self.balance:
+            self.balance -= amount
+            print("Withdrawn: ",amount ," New Balance: ",self.balance)
+        else:
+            print("Invalid withdrawal amount or insufficient funds.")
+
+    def display(self):
+        print("Account Holder: ",self.name)
+        print("Account Number: ",self.account_number)
+        print("Account Type: ",self.account_type)
+        print("Balance: ",self.balance)
+
+def main():
+    account = None
+    
+    while True:
+        print("\n1. New Customer")
+        print("2. Deposit")
+        print("3. Withdrawal")
+        print("4. Display")
+        print("5. Exit")
+        
+        choice = int(input("Enter your choice: "))
+        
+        if choice == 1:
+            name = input("Enter the name of the depositor: ")
+            account_number = input("Enter the account number: ")
+            account_type = input("Enter the type of account: ")
+            account = BankAccount(name, account_number, account_type)
+            print("New account created successfully.")
+        
+        elif choice == 2:
+            if account:
+                amount = float(input("Enter amount to deposit: "))
+                account.deposit(amount)
+            else:
+                print("No account found. Please create an account first.")
+        
+        elif choice == 3:
+            if account:
+                amount = float(input("Enter amount to withdraw: "))
+                account.withdraw(amount)
+            else:
+                print("No account found. Please create an account first.")
+        
+        elif choice == 4:
+            if account:
+                account.display()
+            else:
+                print("No account found. Please create an account first.")
+        
+        elif choice == 5:
+            print("Exiting the program.")
+            break
+        
+        else:
+            print("Invalid choice. Please try again.")
+
+
+main()
+-----------------------------------------------------------------------------------------------------------
+
+2. Create a menu-driven program that allows users to interact with different functionalities related to classes
+ and objects. 
+The example should include a simple system to manage a library, where you can add books, view books, and search for 
+books. 
+Illustrate the use of classes, objects, and user-driven menus as shown below. 
+Library Management System 
+1. Add Book 
+2. View All Books 
+3. Search Book by Title 
+4. Exit Enter your choice 
+(1-4): Classes and Methods will be as follows:
+Book Class: should Represents a book with title, author, and year attributes. The __str__ method
+provides a string representation for easy printing.
+Library Class: Manages a list of Book objects. It includes methods to add a book (add_book), view all
+books (view_books), and search for a book by title (search_book).
+Menu Functionality will be as follows:
+print_menu Function: Prints the menu options for user interaction.
+main Function: Runs the menu-driven program loop. It prompts the user to make a choice and performs
+the corresponding action (add, view, search, or exit).
+User Interaction will be as follows:
+The program interacts with the user through the console. It handles book additions, views, and searches
+based on user input
+
+---------------------------------------
+Solution :
+
+class Book:
+    def __init__(self, title, author, year):
+        self.title = title  
+        self.author = author  
+        self.year = year  
+
+    def __str__(self):
+        return ("Title: ",self.title," Author: ",self.author," Year: ",self.year)
+
+
+class Library:
+    def __init__(self):
+        self.books = []
+
+    def add_book(self, title, author, year):
+        new_book = Book(title, author, year)
+        self.books.append(new_book)
+        print(f"Book '{title}' by {author} added successfully.")
+
+    def view_books(self):
+        if not self.books:
+            print("No books in the library.")
+        else:
+            print("Books in the library:")
+            for book in self.books:
+                print(book)
+
+    def search_book(self, title):
+        found_books = [book for book in self.books if title.lower() in book.title.lower()]
+        if found_books:
+            print("Search Results:")
+            for book in found_books:
+                print(book)
+        else:
+            print("No books found with that title.")
+
+
+def print_menu():
+    print("\nLibrary Management System")
+    print("1. Add Book")
+    print("2. View All Books")
+    print("3. Search Book by Title")
+    print("4. Exit")
+
+
+def main():
+    library = Library()
+
+    while True:
+        print_menu()  
+        choice = int(input("Enter your choice (1-4): "))
+
+        if choice == 1:
+            title = input("Enter the book title: ")
+            author = input("Enter the author's name: ")
+            year = input("Enter the year of publication: ")
+            library.add_book(title, author, year)
+
+        elif choice == 2:
+            library.view_books()
+
+        elif choice == 3:
+            title = input("Enter the book title to search: ")
+            library.search_book(title)
+
+        elif choice == 4:
+            print("Exiting the program.")
+            break
+
+        else:
+            print("Invalid choice. Please try again.")
+
+if __name__ == "__main__":
+    main()
+-------------------------------------------------------------------------------------------------------------------
+
+Create a menu-driven Employee Management System using Python classes and objects. 
+The system will allow the user to: 
+1. Add new employees with details. 
+2. View all employees. 
+3. Update employee information. 
+4. Delete an employee record. 
+5. Exit the program. 
+Output should display a menu like this: 
+Employee Management System 
+1. Add Employee 
+2. View All Employees 
+3. Update Employee Information 
+4. Delete Employee 
+5. Exit Enter your choice (1-5):
+-----------------------------------
+Solution :
+
+class Employee:
+    def __init__(self, emp_id, name, position):
+        self.emp_id = emp_id  
+        self.name = name  
+        self.position = position  
+
+    def __str__(self):
+        return f"ID: {self.emp_id}, Name: {self.name}, Position: {self.position}"
+
+
+class EmployeeManagementSystem:
+    def __init__(self):
+        self.employees = []  
+
+    def add_employee(self, emp_id, name, position):
+            new_employee = Employee(emp_id, name, position)
+            self.employees.append(new_employee)
+            print("Employee ",name," added successfully.")
+    def view_employees(self):
+        if not self.employees:
+            print("No employees found.")
+        else:
+            print("Employees:")
+            for emp in self.employees:
+                print(emp)
+
+    def update_employee(self, emp_id, name=None, position=None):
+        for emp in self.employees:
+            if emp.emp_id == emp_id:
+                if name:
+                    emp.name = name
+                if position:
+                    emp.position = position
+                print("Employee ID ",emp_id," updated successfully.")
+                return
+        print("Employee ID ",emp_id," not found.")
+
+    def delete_employee(self, emp_id):
+        for emp in self.employees:
+            if emp.emp_id == emp_id:
+                self.employees.remove(emp)
+                print("Employee ID ",emp_id," deleted successfully.")
+                return
+        print("Employee ID ",emp_id," not found.")
+
+
+def print_menu():
+    print("\nEmployee Management System")
+    print("1. Add Employee")
+    print("2. View All Employees")
+    print("3. Update Employee Information")
+    print("4. Delete Employee")
+    print("5. Exit")
+
+
+def main():
+    ems = EmployeeManagementSystem()
+
+    while True:
+        print_menu() 
+        choice = int(input("Enter your choice (1-5): "))
+
+        if choice == 1:
+            emp_id = input("Enter employee ID: ")
+            name = input("Enter employee name: ")
+            position = input("Enter employee position: ")
+            ems.add_employee(emp_id, name, position)
+
+        elif choice == 2:
+            ems.view_employees()
+
+        elif choice == 3:
+            emp_id = input("Enter employee ID to update: ")
+            name = input("Enter new name (leave blank to keep current): ")
+            position = input("Enter new position (leave blank to keep current): ")
+            ems.update_employee(emp_id, name if name else None, position if position else None)
+
+        elif choice == 4:
+            emp_id = input("Enter employee ID to delete: ")
+            ems.delete_employee(emp_id)
+
+        elif choice == 5:
+            print("Exiting the program.")
+            break
+
+        else:
+            print("Invalid choice. Please try again.")
+
+if __name__ == "__main__":
+    main()
+
+-----------------------------------------------------------------------------------------------------
+
+4. Write a program to implement following.
+Create a base class named person consisting of name and code. Create 2 child classes
+
+a) Account with member_pay
+b) Admin with experience and inherit the base class.
+
+Create a class employee with name, code, experience and pay by inheriting the above
+classes.
+-----------------------------------
+Solution :
+class Person:
+    def __init__(self, name, code):
+        self.name = name  
+        self.code = code  
+
+    def display_info(self):
+        return "Name: "+str(self.name)+" Code: "+str(self.code)
+
+
+class Account(Person):
+    def __init__(self, name, code, pay):
+        Person.__init__(self,name, code)  
+        self.pay = pay  
+
+    def display_account_info(self):
+        return self.display_info() +" Pay: "+str(self.pay)
+
+
+class Admin(Person):
+    def __init__(self, name, code, experience):
+        Person.__init__(self,name, code)  
+        self.experience = experience  
+
+    def display_admin_info(self):
+        return self.display_info()+" Experience: "+str(self.experience) +" years"
+
+
+class Employee(Account, Admin):
+    def __init__(self, name, code, pay, experience):
+        Account.__init__(self, name, code, pay)  
+        Admin.__init__(self, name, code, experience)
+
+    def display_employee_info(self):
+        return self.display_account_info()+" Experience: "+str(self.experience) +" years"
+
+
+
+if __name__ == "__main__":
+    emp = Employee("John Doe", "E123", 50000, 5)
+    print(emp.display_employee_info())
+
+
+--------------------------------------------------------------------------------------------------------
+5. Write program to create a base class staff with code and name. Derive classes
+teacher(subject , publication) , typist (speed) , officer (grade) . Using the typist class as
+base class,create two classes regular(salary) and casual(daily wages).Implement a
+menu driven program for the same.
+
+Output:
+1. Teacher
+2. Officer,
+3. Regular Typist
+4. Casaul typist
+5. Exit
+--------------------------------------
+Solution :
+class staff:
+    def __init__(self, code, name):
+        self.code = code
+        self.name = name
+
+    def display_info(self):
+        return "Code: " + str(self.code) + " Name: " + str(self.name)
+
+class teacher(staff):
+    def __init__(self, code, name, subject, publication):
+        super().__init__(code, name)
+        self.subject = subject
+        self.publication = publication
+
+    def display_info(self):
+        return super().display_info() + " Subject: " + str(self.subject) + " Publication: " + str(self.publication)
+
+class officer(staff):
+    def __init__(self, code, name, grade):
+        super().__init__(code, name)
+        self.grade = grade
+
+    def display_info(self):
+        return super().display_info() + " Grade: " + str(self.grade)
+
+class typist(staff):
+    def __init__(self, code, name, speed):
+        super().__init__(code, name)
+        self.speed = speed
+
+    def display_info(self):
+        return super().display_info() + " Typing Speed: " + str(self.speed) + " wpm"
+
+class regular_typist(typist):
+    def __init__(self, code, name, speed, salary):
+        super().__init__(code, name, speed)
+        self.salary = salary
+
+    def display_info(self):
+        return super().display_info() + " Salary: " + str(self.salary)
+
+class casual_typist(typist):
+    def __init__(self, code, name, speed, daily_wages):
+        super().__init__(code, name, speed)
+        self.daily_wages = daily_wages
+
+    def display_info(self):
+        return super().display_info() + " Daily Wages: " + str(self.daily_wages)
+
+def print_menu():
+    print("\nMenu:")
+    print("1. Teacher")
+    print("2. Officer")
+    print("3. Regular Typist")
+    print("4. Casual Typist")
+    print("5. Exit")
+
+def main():
+    while True:
+        print_menu()
+        choice = int(input("Enter your choice (1-5): "))
+
+        if choice == 1:
+            code = input("Enter teacher code: ")
+            name = input("Enter teacher name: ")
+            subject = input("Enter subject: ")
+            publication = input("Enter publication: ")
+            teacher1 = teacher(code, name, subject, publication)
+            print(teacher1.display_info())
+
+        elif choice == 2:
+            code = input("Enter officer code: ")
+            name = input("Enter officer name: ")
+            grade = input("Enter grade: ")
+            officer1 = officer(code, name, grade)
+            print(officer1.display_info())
+
+        elif choice == 3:
+            code = input("Enter typist code: ")
+            name = input("Enter typist name: ")
+            speed = int(input("Enter typing speed (wpm): "))
+            salary = float(input("Enter salary: "))
+            regular_typist1 = regular_typist(code, name, speed, salary)
+            print(regular_typist1.display_info())
+
+        elif choice == 4:
+            code = input("Enter typist code: ")
+            name = input("Enter typist name: ")
+            speed = int(input("Enter typing speed (wpm): "))
+            daily_wages = float(input("Enter daily wages: "))
+            casual_typist1 = casual_typist(code, name, speed, daily_wages)
+            print(casual_typist1.display_info())
+
+        elif choice == 5:
+            print("Exiting the program.")
+            break
+
+        else:
+            print("Invalid choice. Please try again.")
+
+if __name__ == "__main__":
+    main()
+
+
+
+
 
 
