@@ -1,0 +1,190 @@
+program:is a set of instructions used to perform operations to complete a particular task.
+
+statement: 
+
+ keywords, variable, data
+
+
+Procedure Oriented Programming: C
+
+Object Oriented Programming: c++,C#.NET,Java,Python
+
+class:
+object:
+
+functional Programming:
+
+
+Declare a variable x of integer type and assign a value 10 in this.
+
+ C,C#,C++,Java:
+ 
+   int x;
+    x=10;
+ 
+ Python:
+    x=10
+
+  C,C#,C++,Java: integer types:
+ 
+    byte, sbyte => 8 bit integer
+    short,ushort => 16 bit integer
+    int,uint => 32 bit integer
+    long,ulong => 64 bit integer
+
+
+  python: int
+          float
+          str
+
+  python 2.x  => 2.1,2.2,.....2.7
+         3.x  => 3.1,3.2,................3.12
+    
+    
+
+  indentation:
+
+  print a message "success" if condition is true, otherwise "failure"
+
+ C,C#,C++,Java:
+
+  if(condition)
+  {
+    print("success")
+    if(condition)
+    {
+     --------code-------
+    }
+  }
+ else
+  {
+     print("Failure")
+  }
+
+python:
+
+ if(condition):
+ 	print("success")
+ 	if(condition):    
+        	--------code-------
+    
+ else:
+ 	print("Failure")
+ 	
+   
+
+
+ GUI Application development:
+
+  - windows app/desktop app/stand-alone app
+     pyqt,tkinter
+
+  - web app: django,flask,pyramid
+
+  - mobile app: kivy,Beeware
+
+  Two modes for executing:
+
+    - Interactive Mode
+    - Script mode
+
+
+    three ways of writing python code:
+
+      - by using command prompt
+      - write your code in a script( text editor like notepad,notepad++) 
+        and execute this script code in command prompt.
+      - By using interactive IDE(Integrated Develepment Environment)
+
+        Standard IDE : IDLE
+        IDE's : Jupytor,pycharm,spyder
+        online IDE's : jupytor Notebook
+
+
+
+    'cdac'  "cdac"   '''cdac'''
+
+    """cdac"""
+         
+        
+  10 + 30  => addition  => 40
+
+  "cdac"+"Noida" => concatenation => cdacNoida
+
+  10+"cdac" => error
+
+  '10' + '20' =>1020
+
+   ["cdac","noida", 1000,2000]                      => list
+
+
+
+
+  {} => dictionary or set 
+() => tuple
+
+
+
+=====================================================
+
+help("keywords")
+
+Here is a list of the Python keywords.  Enter any keyword to get more help.
+
+False               class               from                or
+None                continue            global              pass
+True                def                 if                  raise
+and                 del                 import              return
+as                  elif                in                  try
+assert              else                is                  while
+async               except              lambda              with
+await               finally             nonlocal            yield
+break               for                 not                 
+
+x=10
+y
+Traceback (most recent call last):
+  File "<pyshell#5>", line 1, in <module>
+    y
+NameError: name 'y' is not defined
+x,y,z=100,"cdac",23.50
+x
+100
+y
+'cdac'
+z
+23.5
+x=y=z=100
+x
+100
+y
+100
+z
+100
+x=100=y=z
+SyntaxError: cannot assign to literal
+x=10
+y=2
+z=x/y
+z
+5.0
+z=x//y   #floor division
+z
+5
+z=5/2
+z
+2.5
+z=5//2
+z
+2
+z=5//2.0
+z
+2.0
+s=2**3
+s
+8
+pow(2,3)
+8
+d=5%2
+d
+1
