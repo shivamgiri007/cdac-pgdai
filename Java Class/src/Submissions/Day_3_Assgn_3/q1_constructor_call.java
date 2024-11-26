@@ -1,4 +1,4 @@
-package ClassSolutions.Day_3_Assgn_3;
+package Submissions.Day_3_Assgn_3;
 //Q 1 WAP using parameterized constructor with two parameters id and name. While creating the objects obj1 and obj2
 //passed two arguments so that this constructor gets invoked after creation of obj1 and obj2
 class Student {

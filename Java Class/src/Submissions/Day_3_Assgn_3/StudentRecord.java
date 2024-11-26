@@ -1,4 +1,4 @@
-package ClassSolutions.Day_3_Assgn_3;
+package Submissions.Day_3_Assgn_3;
 //Q 6  Create a class named 'StudentRecord' with String variable 'sname' and integer variable 'roll_no'.
 //Assign the value of roll_no as '2' and that of name as "John" while creating an object of the class Student.
 //and using display method show all values on console

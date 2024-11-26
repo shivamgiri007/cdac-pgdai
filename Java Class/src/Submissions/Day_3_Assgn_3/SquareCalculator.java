@@ -1,4 +1,4 @@
-package ClassSolutions.Day_3_Assgn_3;
+package Submissions.Day_3_Assgn_3;
 import java.text.DecimalFormat;
 //Q 9 Write a JAVA program which contains a method square() such that square(3) returns 9,square(0.2) returns 0.04.
 public class SquareCalculator {

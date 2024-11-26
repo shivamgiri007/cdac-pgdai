@@ -1,4 +1,4 @@
-package ClassSolutions.Day_3_Assgn_3;
+package Submissions.Day_3_Assgn_3;
 //Q4 Write a program create a class ‘simpleobject‘. Using constructor display the message.
 class SimpleObject {
     // Constructor

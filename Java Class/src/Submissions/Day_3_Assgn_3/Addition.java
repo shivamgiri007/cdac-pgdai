@@ -1,4 +1,4 @@
-package ClassSolutions.Day_3_Assgn_3;
+package Submissions.Day_3_Assgn_3;
 //Q 8  wap to perform addition of two three and fourth integer numbers using functions (use polymorphism)
 import java.util.Scanner;
 

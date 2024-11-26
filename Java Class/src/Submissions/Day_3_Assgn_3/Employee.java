@@ -1,4 +1,4 @@
-package ClassSolutions.Day_3_Assgn_3;
+package Submissions.Day_3_Assgn_3;
 //Q 2 Write a program by creating an 'Employee' class having the following methods and print the final salary.
 //1 - 'getInfo()' which takes the salary, number of hours of work per day of employee as parameter
 //2 - 'AddSal()' which adds 10000 to salary of the employee if it is less than 50000.

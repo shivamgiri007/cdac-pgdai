@@ -1,4 +1,4 @@
-package ClassSolutions.Day_3_Assgn_3;
+package Submissions.Day_3_Assgn_3;
 //Q 5    Design a class to represent bank account. Include members:
 //a.    Data members
 //i.      Name of depositor

@@ -1,4 +1,4 @@
-package ClassSolutions.Day_3_Assgn_3;
+package Submissions.Day_3_Assgn_3;
 //Q 3 Write a program to create a room class, the attributes of this class is roomno, roomtype, 
 //roomarea and ACmachine. In this class the member functions are setdata and displaydata.
 
