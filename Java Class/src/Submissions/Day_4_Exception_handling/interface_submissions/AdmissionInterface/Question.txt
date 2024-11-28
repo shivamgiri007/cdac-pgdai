@@ -1,0 +1,8 @@
+Q 7 Write a program that define interface Admission having abstract method registration 
+Create another class Student in separate file having method Addstudent ()
+
+  In Addstudent create local class Mtech student that inherits Admission interface 
+ In same method  also create anonymous class that also inherits Admission interface 
+In both above classes implement registration method 
+
+In main call AddStudent method of student class.
