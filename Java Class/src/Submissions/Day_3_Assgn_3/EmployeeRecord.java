@@ -1,6 +1,5 @@
 package Submissions.Day_3_Assgn_3;
 import java.util.Scanner;
-import java.util.Arrays;
 import java.util.Comparator;
 //
 //Q 7 wap to ask 6 employee record from  user using get and display method show record on console 

@@ -28,6 +28,7 @@ public class Question_2 {
 		else {
 			System.out.println("Fail");
 		}
+		sc.close();
 	}
 
 }

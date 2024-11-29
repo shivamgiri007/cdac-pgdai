@@ -15,5 +15,6 @@ public class Question_3_Sum_of_numbers_in_number {
 		int a = sc.nextInt();
 		Question_3_Sum_of_numbers_in_number s = new Question_3_Sum_of_numbers_in_number();
 		System.out.println(s.sumOfInt(a));
+		sc.close();
 	}
 }
